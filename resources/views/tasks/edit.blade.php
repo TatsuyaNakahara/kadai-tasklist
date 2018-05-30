@@ -6,7 +6,7 @@
 
     {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
     
-        {!! Form::label('management', 'マネージメント:') !!}
+        {!! Form::label('management', '今一番やるべきタスク:') !!}
         {!! Form::text('management') !!}
 
         {!! Form::label('content', 'タスク:') !!}
