@@ -23,7 +23,7 @@ class TasksController extends Controller
                 'tasks' => $tasks,
             ];
             $data += $this->counts($user);
-            return view('users.show', $data);
+            return view('tasks.show', $data);
         }else {
             return view('welcome');
         }
