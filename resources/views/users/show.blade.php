@@ -18,7 +18,7 @@
                 <li><a href="#">Followings</a></li>
                 <li><a href="#">Followers</a></li>
             </ul>
-            @if (Auth::user()->id == $user->id)
+            @if (Auth::id() == $user->id)
                   {!! Form::open(['route' => 'tasks.store']) !!}
                       <div class="form-group">
                           {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2']) !!}
