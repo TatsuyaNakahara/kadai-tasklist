@@ -13,6 +13,9 @@
                 {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $task->id], ['class' => 'btn btn-default']) !!}
             </div>
             <div>
+                {{ $task->status }}
+            </div>
+            <div>
                 <p>{!! nl2br(e($task->content)) !!}</p>
             </div>
             <div>
