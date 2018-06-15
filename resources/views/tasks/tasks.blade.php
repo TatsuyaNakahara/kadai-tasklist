@@ -2,21 +2,18 @@
 @foreach ($tasks as $task)
     <?php $user = $task->user; ?>
     <li class="media">
-        <div class="media-left">
-            <img class="media-object img-rounded" src="{{ Gravatar::src($user->email, 50) }}" alt="">
-        </div>
         <div class="media-body">
             <div>
                 {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $task->created_at }}</span>
-            </div>
-            <div>
-                {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $task->id], ['class' => 'btn btn-default']) !!}
             </div>
             <div>
                 {{ $task->status }}
             </div>
             <div>
                 <p>{!! nl2br(e($task->content)) !!}</p>
+            </div>
+            <div>
+                {!! link_to_route('tasks.edit', 'このタスクを編集', ['id' => $task->id], ['class' => 'btn btn-default']) !!}
             </div>
             <div>
                 @if (Auth::user()->id == $task->user_id)

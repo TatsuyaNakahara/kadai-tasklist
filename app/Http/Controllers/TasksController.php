@@ -54,6 +54,15 @@ class TasksController extends Controller
             'task' => $task,
         ]);
     }
+    
+    public function create()
+    {
+        $task = new Task;
+
+        return view('tasks.create', [
+            'task' => $task,
+        ]);
+    }
 
     public function edit($id)
     {
